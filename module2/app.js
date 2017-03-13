@@ -22,7 +22,6 @@
 
   function AlreadyBoughtController (ShoppingListCheckOffService) {
       var list = this;
-
       list.items = ShoppingListCheckOffService.boughtList;
   }; // AlreadyBoughtController
 
