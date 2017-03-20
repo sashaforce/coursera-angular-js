@@ -10,7 +10,7 @@
     var ddo = {
         scope: {
           foundItems: "<",
-          //onRemove: "&"
+          onRemove: "&"
         },
         templateUrl: "foundItems.html",
         restrict: "E",
@@ -40,6 +40,11 @@
       .catch(function (error){
         console.log("ERROR - UNABLE TO RETRIEVE DATA FROM SERVER. Error: " + error);
       })
+    }
+
+    ctrl.removeItem = function (itemIndex) {
+      console.log("Removing item @ index " + itemIndex);
+      ctrl.found.splice(itemIndex,1);
     }
   };
 
