@@ -32,6 +32,11 @@
 
     ctrl.narrowItDown = function (searchTerm) {
       console.log("narrowItDown(" + searchTerm + ")");
+      if (!searchTerm || (searchTerm == undefined)) {
+        ctrl.found = [];
+        return;
+      }
+
       MenuSearchService.getMatchedMenuItems(searchTerm)
       .then(function(result){
         console.log("then result: " + result)

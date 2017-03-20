@@ -5,4 +5,5 @@
       <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
     </li>
   </ul>
+  <div ng-if="list.foundItems.length <= 0">Nothing found</div>
 </div>
