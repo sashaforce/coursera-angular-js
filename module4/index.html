@@ -2,9 +2,29 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Module 4</title>
+    <title>Menu App</title>
   </head>
-  <body>
+  <body ng-app="MenuApp">
+    <H1>David's Restaurant</H1>
+
+    <ui-view></ui-view>
+
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/data/data.module.js"></script>
+    <script src="src/menuapp/menuapp.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- MenuApp module artifacts -->
+    <script src="src/menuapp/categories.component.js"></script>
+
+    <!-- MenuData module artifacts -->
+    <script src="src/data/menudata.service.js"></script>
 
   </body>
 </html>
