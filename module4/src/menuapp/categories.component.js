@@ -3,7 +3,8 @@
 
 angular.module('MenuApp')
 .component('categories', {
-  templateUrl: 'src/templates/categories.template.html',
+  templateUrl: 'src/menuapp/templates/categoryList.template.html',
+  // no controller needed - no special behaviour (?)
   bindings: {
     items: '<'
   }

@@ -4,10 +4,10 @@
 angular.module('MenuApp')
 .config(RoutesConfig);
 
-RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider', 'MenuDataService'];
-//RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
-function RoutesConfig($stateProvider, $urlRouterProvider, MenuDataService) {
-//function RoutesConfig($stateProvider, $urlRouterProvider) {
+//RoutesConfig.$inject = ['MenuDataService', '$stateProvider', '$urlRouterProvider'];
+RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+//function RoutesConfig(MenuDataService, $stateProvider, $urlRouterProvider) {
+function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   // Redirect to home page if no other URL matches
   $urlRouterProvider.otherwise('/');
@@ -23,8 +23,8 @@ function RoutesConfig($stateProvider, $urlRouterProvider, MenuDataService) {
 
   .state('categories', {
     url: '/categories',
-    templateUrl: 'src/menuapp/categories.template.html',
-    controller: 'CategoryListController as categoryList',
+    templateUrl: 'src/menuapp/templates/categories.template.html',
+    //controller: 'CategoryListController as categoryList'//,
     // resolve: {
     //   categories: ['MenuDataService', function(MenuDataService) {
     //     return MenuDataService.getAllCategories();
