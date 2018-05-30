@@ -18,18 +18,24 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Home page
   .state('home', {
     url: '/',
-    templateUrl: 'src/menuapp/templates/home.template.html'
+    templateUrl: 'src/templates/home.template.html'
   })
 
   .state('categories', {
     url: '/categories',
-    templateUrl: 'src/menuapp/templates/categories.template.html',
-    //controller: 'CategoryListController as categoryList'//,
-    // resolve: {
-    //   categories: ['MenuDataService', function(MenuDataService) {
-    //     return MenuDataService.getAllCategories();
-    //   }]
-    // }
+    templateUrl: 'src/templates/categories.template.html',
+    controller: 'CategoriesController as ctrl',
+    resolve: {
+      categories: ['MenuDataService', function(MenuDataService) {
+        return MenuDataService.getAllCategories();
+      }]
+    }
+  })
+
+  .state('categories.items', {
+    url: '/items/{catShortName}',
+    templateUrl: 'src/templates/items.template.html',
+    controller: 'ItemsController as ctrl'
   });
 
 }

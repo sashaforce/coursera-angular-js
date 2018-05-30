@@ -10,7 +10,7 @@ function MenuDataService($http) {
   console.log("MenuDataService");
 
   service.getAllCategories = function () {
-    console.console.log("getAllCategories");
+    console.log("getAllCategories");
 
     return $http({
       method: 'GET',
