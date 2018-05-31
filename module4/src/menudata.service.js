@@ -17,6 +17,18 @@ function MenuDataService($http) {
       url: 'https://davids-restaurant.herokuapp.com/categories.json'
     });
   }
+
+  service.getItemsForCategory = function (catShortName) {
+    console.log("getItemsForCategory");
+
+    var url = "https://davids-restaurant.herokuapp.com/menu_items.json?category=" + catShortName;
+
+    return $http({
+      method: 'GET',
+      url: url
+    });
+  }
+
 }
 
 }());

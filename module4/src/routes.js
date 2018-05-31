@@ -35,7 +35,14 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   .state('categories.items', {
     url: '/items/{catShortName}',
     templateUrl: 'src/templates/items.template.html',
-    controller: 'ItemsController as ctrl'
+    controller: 'ItemsController as ctrl',
+    resolve: {
+      items: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
+        // how do we get access to categoryShortName here???
+        // A: is passed in as a param!!! Duh. Use $stateParams service.
+        return MenuDataService.getItemsForCategory($stateParams.catShortName);
+      }]
+    }
   });
 
 }
